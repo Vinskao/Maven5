@@ -1,6 +1,10 @@
 package dao;
 
+import db.ConnConst;
 import domain.CustomerBean;
+
+import java.sql.*;
+
 public class CustomerDAOJdbc {
     Connection conn = null;
     public CustomerDAOJdbc(){

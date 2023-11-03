@@ -1,5 +1,8 @@
 package Test;
 
+import dao.CustomerDAOJdbc;
+import domain.CustomerBean;
+
 public class CustTest {
     public static void main(String[] args) {
         CustomerDAOJdbc dao = new CustomerDAOJdbc();
