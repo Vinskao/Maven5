@@ -30,6 +30,8 @@ public class CustomerDAOJdbc {
                 result.setEmail(resultSet.getString("email"));
                 //Retrieves the value of the designated column in the current row of this ResultSet object as a String
             }
+            resultSet.close();
+            preparedStatement.close();
         } catch (SQLException e){
             e.printStackTrace();
         }
