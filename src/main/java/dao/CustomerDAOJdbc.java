@@ -2,19 +2,18 @@ package dao;
 
 import db.ConnConst;
 import domain.CustomerBean;
-
 import java.sql.*;
 
 public class CustomerDAOJdbc {
     Connection conn = null;
     public CustomerDAOJdbc(){
         try {
+            Class.forName(ConnConst.JDBC_DRIVER);
             conn = DriverManager.getConnection(ConnConst.DB_URL, ConnConst.USER, ConnConst.PASSWORD);
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }
-
     private static final String SELECT = "select * from customer where custid = ?";
     public CustomerBean select(String custid) {
         CustomerBean result = null;
