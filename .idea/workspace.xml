@@ -5,16 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f63d51ef-9807-4c95-80f2-c5f134c576b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/daoExample/CustomerDAOJdbc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/daoExample/ProductDAOJdbc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Test/ProdTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Test/CustTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/CustTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/CustomerDAOJdbc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/CustomerDAOJdbc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProductDAOJdbc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProductDAOJdbc.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,10 +46,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/vinskao/Desktop/Maven5/src/main/java/dao",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/VinsKao/Desktop/Maven5/lib/mssql-jdbc-12.4.1.jre11.jar",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.general"
   }
 }]]></component>
   <component name="RecentsManager">
