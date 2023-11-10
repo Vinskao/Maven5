@@ -1,10 +1,20 @@
 package domain;
 
+import java.util.Date;
+
 public class CustomerBean {
 	private String custid;
 	private byte[] password;
 	private String email;
 	private java.util.Date birth;
+
+//	public CustomerBean(String custid, byte[] password, String email, Date birth) {
+//		this.custid = custid;
+//		this.password = password;
+//		this.email = email;
+//		this.birth = birth;
+//	}
+
 	@Override
 	public String toString() {
 		return "CustomerBean [custid=" + custid + ", email=" + email + ", birth=" + birth + "]";

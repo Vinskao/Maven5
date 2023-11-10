@@ -4,7 +4,7 @@ import domain.ProductBean;
 public class ProdTest {
     public static void main(String[] args) {
         ProductDAOJdbc dao = new ProductDAOJdbc();
-        ProductBean product = dao.select(1);
+        ProductBean product = dao.SELECT_BY_PK(1);
         if (product != null){
             System.out.println("id: " + product.getId());
             System.out.println("name: " + product.getName());
