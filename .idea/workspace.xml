@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f63d51ef-9807-4c95-80f2-c5f134c576b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/ProdInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Test/CustServTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/CustomerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Test/CustTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/CustTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Test/ProdTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/ProdTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/CustomerDAOJdbc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/CustomerDAOJdbc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProdInterface.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProductDAOJdbc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProductDAOJdbc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/CustomerBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/CustomerBean.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +65,9 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="dao" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="dao" />

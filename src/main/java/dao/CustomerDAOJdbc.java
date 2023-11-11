@@ -1,78 +1,78 @@
 package dao;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import db.ConnConst;
 import domain.CustomerBean;
-import java.sql.*;
 
 public class CustomerDAOJdbc {
     Connection conn = null;
     public CustomerDAOJdbc(){
         try {
             Class.forName(ConnConst.JDBC_DRIVER);
-            conn = DriverManager.getConnection(ConnConst.DB_URL, ConnConst.USER, ConnConst.PASSWORD);
-        } catch (SQLException | ClassNotFoundException e) {
+            conn = DriverManager.getConnection(ConnConst.DB_URL, ConnConst.USER, ConnConst.PASSWORD );
+        } catch (ClassNotFoundException | SQLException e) {
             throw new RuntimeException(e);
         }
     }
     private static final String SELECT = "select * from customer where custid = ?";
     public CustomerBean select(String custid) {
         CustomerBean result = null;
-        try {
-            PreparedStatement preparedStatement = conn.prepareStatement(SELECT);
-            preparedStatement.setString(1,custid);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            //Executes the given SQL statement, which returns a single ResultSet object.
+        ResultSet rset = null;
+        try(
+            PreparedStatement stmt = conn.prepareStatement(SELECT)
 
-            if (resultSet.next()){
+        )
+        {
+            stmt.setString(1, custid);
+            rset = stmt.executeQuery();
+            if(rset.next()) {
                 result = new CustomerBean();
-                result.setCustid(resultSet.getString("custid"));
-                result.setBirth(resultSet.getDate("birth"));
-                result.setEmail(resultSet.getString("email"));
-                //Retrieves the value of the designated column in the current row of this ResultSet object as a String
-
-
+                result.setCustid(rset.getString("custid"));
+                result.setPassword(rset.getBytes("password"));
+                result.setEmail(rset.getString("email"));
+                result.setBirth(rset.getDate("birth"));
             }
-            resultSet.close();
-            preparedStatement.close();
-        } catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            if (rset!=null) {
+                try {
+                    rset.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return result;
     }
 
     private static final String UPDATE =
             "update customer set password=?, email=?, birth=? where custid=?";
-
     public boolean update(byte[] password, String email, java.util.Date birth, String custid) {
-        int x =0;
-        CustomerBean result = null;
-        ResultSet rset = null;
-        try (PreparedStatement preparedStatement = conn.prepareStatement(UPDATE);
-        PreparedStatement stmt = conn.prepareStatement(UPDATE);
-        )
-        {
+        try(
+            PreparedStatement stmt = conn.prepareStatement(UPDATE)) {
             stmt.setBytes(1, password);
             stmt.setString(2, email);
-            stmt.setDate(3, new java.sql.Date(birth.getTime()));
+            if(birth!=null) {
+                System.out.println(1);
+                long time = birth.getTime();
+                stmt.setDate(3, new java.sql.Date(time));
+            } else {
+                stmt.setDate(3, null);
+            }
             stmt.setString(4, custid);
-            x = stmt.executeUpdate();
 
+            int i = stmt.executeUpdate();
+            if(i==1) {
+                return true;
+            }
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
-        } finally {
-            if (rset != null){
-                try {
-                    rset.close();
-                } catch (SQLException e){
-                    e.printStackTrace();
-                }
-            }
         }
-        if (x == 0){
-            return false;
-        } else {
-            return true;
-        }
+        return false;
     }
 }

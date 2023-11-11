@@ -1,7 +1,7 @@
 package dao;
 
 import java.sql.*;
-import java.util.List;
+
 import db.ConnConst;
 import domain.ProductBean;
 
@@ -66,10 +66,38 @@ public class ProductDAOJdbc {
 	
 	private static final String UPDATE =
 			"update product set name=?, price=?, make=?, expire=? where id=?";
-	public ProductBean update(ProductBean bean) {
+	public boolean update(ProductBean bean) {
+		int isUpdated = 0;
 		ProductBean result = null;
-		
-		return result;
+		ResultSet rset = null;
+		try (
+			PreparedStatement preparedStatement = conn.prepareStatement(UPDATE);
+		)
+		{
+			preparedStatement.setString(1, bean.getName());
+			preparedStatement.setDouble(2, bean.getPrice());
+			preparedStatement.setDate(3, new java.sql.Date(bean.getMake().getTime()));
+			preparedStatement.setInt(4, bean.getExpire());
+			preparedStatement.setInt(5, bean.getId());
+			isUpdated = preparedStatement.executeUpdate();
+
+		} catch (SQLException e){
+			e.printStackTrace();
+			return false;
+		} finally {
+			if (rset != null){
+				try {
+					rset.close();
+				} catch (SQLException e){
+					e.printStackTrace();
+				}
+			}
+		}
+		if (isUpdated == 0){
+			return false;
+		} else {
+			return true;
+		}
 	}
 	
 	private static final String DELETE = "delete from product where id = ?";

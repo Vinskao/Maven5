@@ -15,6 +15,14 @@ public class ProdTest {
         } else {
             System.out.println("找不到對應的商品資料。");
         }
-
+        ProductBean updatedProduct = new ProductBean();
+        updatedProduct.setId(1);
+        updatedProduct.setName("小高");
+        updatedProduct.setPrice(99.99);
+        updatedProduct.setMake(new java.util.Date(300000000));
+        updatedProduct.setExpire(365);
+        if (dao.update(updatedProduct)){
+            System.out.println("Updated");
+        }
     }
 }

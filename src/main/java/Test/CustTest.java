@@ -11,13 +11,12 @@ public class CustTest {
             System.out.println("Customer ID: " + customerSelect.getCustid());
             System.out.println("Birth Date: " + customerSelect.getBirth());
             System.out.println("Email: " + customerSelect.getEmail());
-
             // 以此類推，根據 CustomerBean 的屬性印出相關資訊
         } else {
             System.out.println("找不到對應的客戶資料。");
         }
-        boolean y = dao.update(new byte[]{1,2,3}, "23fewf", new java.util.Date(123,8,8), "Alex"  );
-        System.out.println(y);
+        boolean isUpdated = dao.update(new byte[]{1,2,3}, "23fewf", new java.util.Date(322353425), "Alex"  );
+        System.out.println(isUpdated);
     }
 }
 
